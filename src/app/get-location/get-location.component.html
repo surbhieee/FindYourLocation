@@ -1,0 +1,31 @@
+
+<div class="container">
+<form>
+  <div class="form-group">
+    <label for="InputLocation">Find Your Location: </label>
+    <input type="text" class="form-control" id="InputLocation" name="location" value="location" placeholder="Enter your location" [(ngModel)]="location">
+  </div>
+  <button type="submit" (click)='onSubmit(location)' class="btn btn-primary">Submit</button>
+</form>
+
+<div class="row">
+   <div class="col-md  card text-center">
+  <div class="card-header">
+    Longitude
+  </div>
+  <div class="card-body">
+    <h5 class="card-title" *ngIf="location">{{longitude}}</h5>
+</div>
+  </div>
+
+   <div class=" col-md card text-center">
+  <div class="card-header">
+    Latitude
+  </div>
+  <div class="card-body">
+    <h5 class="card-title" *ngIf="location">{{latitude}}</h5>
+  </div>
+  </div>
+
+</div>
+</div>
