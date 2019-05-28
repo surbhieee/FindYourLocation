@@ -7,7 +7,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class GetLocationHTTPServiceService {
-private baseURL = "http://www.datasciencetoolkit.org/maps/api/geocode/json?sensor=false&address=";
+private baseURL = "/api/geocode/json?sensor=false&address=";
   
 constructor(private _http: HttpClient) { }
 
@@ -15,7 +15,6 @@ constructor(private _http: HttpClient) { }
   getLocation(location){
     console.log(`${this.baseURL}${location}`);
     return this._http.get(`${this.baseURL}sensor=false?${location}`);
-
   }
 
 }
