@@ -1,11 +1,11 @@
 
 <div class="container">
-<form>
+<form #f="ngForm">
   <div class="form-group">
     <label for="InputLocation">Find Your Location: </label>
-    <input type="text" class="form-control" id="InputLocation" name="location" value="location" placeholder="Enter your location" [(ngModel)]="location">
+    <input type="text" class="form-control" id="InputLocation" name="location" value="location" required placeholder="Enter your location" [(ngModel)]="location">
   </div>
-  <button type="submit" (click)='onSubmit(location)' class="btn btn-primary">Submit</button>
+  <button type="submit" (click)='onSubmit(location)' class="btn btn-primary" [disabled]="f.invalid">Submit</button>
 </form>
 
 <div class="row">
